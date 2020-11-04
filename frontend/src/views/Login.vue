@@ -2,6 +2,7 @@
   <div class="home">
     <div class="formulaire">
       <h2>Login</h2>
+      <br>
       <Formulaire  btn="Connexion" />
       <router-link to="/create">Create Account</router-link>
     </div>

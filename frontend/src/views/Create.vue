@@ -2,6 +2,7 @@
   <div class="create">
     <div class="formulaire">
       <h2>Create</h2>
+      <br>
       <Formulaire  btn="Create" @sendUser="updateUser" />
       <router-link to="/"><span class="span">Login Account</span> </router-link>
     </div>

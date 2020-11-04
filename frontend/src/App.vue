@@ -1,23 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <h1> Réseau Social</h1>
-      <div class="navBar">
-        <router-link to="/">Login</router-link> |
-        <router-link to="/create">Create</router-link>
-      </div>
-    </div>
+    <header-top></header-top>
     <router-view/>
   </div>
 </template>
 
 <script>
+import Header from './components/Header'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    'header-top' : Header
+  }
 }
 </script>
 
 <style lang="scss">
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
 body{
   width:100%;
   max-width:900px;
@@ -30,15 +35,6 @@ body{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-
-#nav {
-  width:100%;
-  padding: 30px;
-  display:flex;
-  justify-content: space-between;
-  align-items:center; 
 }
 a {
     font-weight: bold;
@@ -54,4 +50,5 @@ a {
       color:#999;
     }
   }
+
 </style>
