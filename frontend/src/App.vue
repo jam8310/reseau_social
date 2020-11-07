@@ -1,27 +1,40 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <h1> Réseau Social</h1>
-      <div class="navBar">
-        <router-link to="/">Login</router-link> |
-        <router-link to="/create">Create</router-link>
-      </div>
-    </div>
+    <header-top v-if="!connected"></header-top>
+    <header-membre v-if="connected"></header-membre>
     <router-view/>
   </div>
 </template>
 
 <script>
+import Header from './components/Header'
+import HeaderMembre from './components/HeaderMembre'
+
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+    return {
+      connected : false
+    }
+  },
+  components: {
+    'header-top': Header,
+    'header-membre': HeaderMembre
+  }
 }
 </script>
 
 <style lang="scss">
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 body{
   width:100%;
   max-width:900px;
   height:100vh;
+  padding:20px;
   margin: 0 auto;
 }
 #app {
@@ -33,13 +46,7 @@ body{
 }
 
 
-#nav {
-  width:100%;
-  padding: 30px;
-  display:flex;
-  justify-content: space-between;
-  align-items:center; 
-}
+
 a {
     font-weight: bold;
     color: #2c3e50;
