@@ -44,9 +44,6 @@ body{
   text-align: center;
   color: #2c3e50;
 }
-
-
-
 a {
     font-weight: bold;
     color: #2c3e50;
@@ -61,4 +58,5 @@ a {
       color:#999;
     }
   }
+
 </style>
